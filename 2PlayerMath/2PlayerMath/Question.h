@@ -16,6 +16,8 @@
 @property (nonatomic) long randomOne;
 @property (nonatomic) long randomTwo;
 
+@property (nonatomic) NSInteger answer;
+
 -(void)generateNumbers;
 
 @end

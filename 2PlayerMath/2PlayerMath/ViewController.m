@@ -39,35 +39,47 @@
 
 
 - (IBAction)oneKey:(id)sender {
+    self.keypadDisplay.text = @"1";
 }
 
 - (IBAction)twoKey:(id)sender {
+    self.keypadDisplay.text = @"2";
 }
 
 - (IBAction)threeKey:(id)sender {
+    self.keypadDisplay.text = @"3";
 }
 
 - (IBAction)fourKey:(id)sender {
+    self.keypadDisplay.text = @"4";
 }
 
 - (IBAction)fiveKey:(id)sender {
+    self.keypadDisplay.text = @"5";
 }
 
 - (IBAction)sixKey:(id)sender {
+    self.keypadDisplay.text = @"6";
 }
 
 - (IBAction)sevenKey:(id)sender {
+    self.keypadDisplay.text = @"7";
 }
 - (IBAction)eightKey:(id)sender {
+    self.keypadDisplay.text = @"8";
 }
 
 - (IBAction)nineKey:(id)sender {
+    self.keypadDisplay.text = @"9";
 }
 
 - (IBAction)zeroKey:(id)sender {
+    self.keypadDisplay.text = @"0";
 }
 
 - (IBAction)enterKey:(id)sender {
+    NSInteger answer = [self.keypadDisplay.text integerValue];
+    
 }
 
 

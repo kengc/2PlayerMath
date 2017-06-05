@@ -14,14 +14,28 @@
 {
     self = [super init];
     if (self) {
-        _player1 = @"Player 1";
-        _player2 = @"Player 2";
+   
         _question = [[Question alloc] init];
+        _player1 = [[Player alloc] initWithPlayerName:@"Player 1"];
+        _player2 = [[Player alloc] initWithPlayerName:@"Player 2"];
+        _currentPlayer = [[Player alloc] init];
+        _currentPlayer = _player1;
         _leftQ = _question.leftValue;
         _rightQ = _question.rightValue;
-        _currentPlayer = _player1;
+
     }
     return self;
+}
+
+-(NSString *)checkAnswer:(NSInteger)answer{
+    
+    if(answer == self.question.answer){
+        return @"Correct!";
+    } else {
+        self.currentPlayer.lives -= 1;
+        return @"Wrong!";
+    }
+    
 }
 
 -(NSString *)generateNameAndQuestion{
@@ -35,22 +49,21 @@
     NSString *question = [lv stringByAppendingString:rightValue];
     
     NSString *p1temp;
-    NSString *player1Question;
+    //NSString *player1Question;
 
     NSString *p2temp;
-    NSString *player2Question;
+    //NSString *player2Question;
     
-    if([self.currentPlayer isEqualToString:self.player1]){
+    if([self.currentPlayer.playerName isEqualToString:self.player1.playerName]){
+        p1temp = [self.player1.playerName stringByAppendingString:@": "];
+        self.playerAndQuestion = [p1temp stringByAppendingString:question];
+        return self.playerAndQuestion;
         
-        p1temp = [self.player1 stringByAppendingString:@": "];
-        player1Question = [p1temp stringByAppendingString:question];
-        return player1Question;
+    } else if ([self.currentPlayer.playerName isEqualToString:self.player2.playerName]){
         
-    } else if ([self.currentPlayer isEqualToString:self.player2]){
-        
-        p2temp = [self.player2 stringByAppendingString:@":"];
-        player2Question = [p2temp stringByAppendingString:question];
-        return player2Question;
+        p2temp = [self.player2.playerName stringByAppendingString:@":"];
+        self.playerAndQuestion = [p2temp stringByAppendingString:question];
+        return self.playerAndQuestion;
     }
     
     return nil;

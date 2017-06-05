@@ -16,6 +16,7 @@
 		73CD2ADF1EE5EFBE000636E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73CD2ADD1EE5EFBE000636E1 /* LaunchScreen.storyboard */; };
 		73CD2AEB1EE5F4C7000636E1 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CD2AEA1EE5F4C7000636E1 /* Question.m */; };
 		73CD2AEE1EE5F5BD000636E1 /* QuestionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CD2AED1EE5F5BD000636E1 /* QuestionManager.m */; };
+		73CD2AF11EE60540000636E1 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CD2AF01EE60540000636E1 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		73CD2AEA1EE5F4C7000636E1 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		73CD2AEC1EE5F5BD000636E1 /* QuestionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionManager.h; sourceTree = "<group>"; };
 		73CD2AED1EE5F5BD000636E1 /* QuestionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionManager.m; sourceTree = "<group>"; };
+		73CD2AEF1EE60540000636E1 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		73CD2AF01EE60540000636E1 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				73CD2ACF1EE5EFBE000636E1 /* AppDelegate.h */,
 				73CD2AD01EE5EFBE000636E1 /* AppDelegate.m */,
 				73CD2AE91EE5F4C7000636E1 /* Question.h */,
+				73CD2AEF1EE60540000636E1 /* Player.h */,
+				73CD2AF01EE60540000636E1 /* Player.m */,
 				73CD2AEA1EE5F4C7000636E1 /* Question.m */,
 				73CD2AEC1EE5F5BD000636E1 /* QuestionManager.h */,
 				73CD2AED1EE5F5BD000636E1 /* QuestionManager.m */,
@@ -169,6 +174,7 @@
 				73CD2AD11EE5EFBE000636E1 /* AppDelegate.m in Sources */,
 				73CD2AEB1EE5F4C7000636E1 /* Question.m in Sources */,
 				73CD2ADA1EE5EFBE000636E1 /* _PlayerMath.xcdatamodeld in Sources */,
+				73CD2AF11EE60540000636E1 /* Player.m in Sources */,
 				73CD2ACE1EE5EFBE000636E1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

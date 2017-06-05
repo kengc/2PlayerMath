@@ -8,19 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import "Question.h"
+#import "Player.h"
 
 @interface QuestionManager : NSObject
 
-
 @property (nonatomic) Question *question;
+@property (nonatomic) Player *player1;
+@property (nonatomic) Player *player2;
+@property (nonatomic) Player *currentPlayer;
+
+@property (nonatomic) NSString *playerAndQuestion;
+//@property (nonatomic) NSInteger rightQ;
+
 @property (nonatomic) NSInteger leftQ;
 @property (nonatomic) NSInteger rightQ;
 
-@property (nonatomic) NSString *player1;
-@property (nonatomic) NSString *player2;
+//@property (nonatomic) NSString *currentPlayer;
 
-@property (nonatomic) NSString *currentPlayer;
-@property (nonatomic) NSNumber *lives;
 
 -(NSString *)generateNameAndQuestion;
+-(NSString *)checkAnswer:(NSInteger)answer;
 @end

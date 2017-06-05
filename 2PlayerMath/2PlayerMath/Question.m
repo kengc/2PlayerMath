@@ -16,6 +16,7 @@
     if (self) {
         _leftValue = arc4random_uniform(90) + 10;
         _rightValue = arc4random_uniform(90) + 10;
+        _answer = _leftValue + _rightValue;
     }
     return self;
 }
@@ -23,5 +24,6 @@
 -(void)generateNumbers{
     self.leftValue = arc4random_uniform(90) + 10;
     self.rightValue = arc4random_uniform(90) + 10;
+    self.answer = self.leftValue + self.rightValue;
 }
 @end
