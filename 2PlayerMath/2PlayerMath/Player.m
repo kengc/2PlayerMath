@@ -16,10 +16,17 @@
     if (self) {
         _playerName = name;
         _lives = 3;
+        _score = 0;
     }
     return self;
 }
-            
+
+-(void)decrementLife{
+    self.lives -= 1;
+}
+-(void)incrementScore{
+    self.score += 1;
+}
     
 
 @end

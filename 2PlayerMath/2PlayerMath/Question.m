@@ -14,9 +14,9 @@
 {
     self = [super init];
     if (self) {
-        _leftValue = arc4random_uniform(90) + 10;
-        _rightValue = arc4random_uniform(90) + 10;
-        _answer = _leftValue + _rightValue;
+//        _leftValue = arc4random_uniform(90) + 10;
+//        _rightValue = arc4random_uniform(90) + 10;
+//        _answer = _leftValue + _rightValue;
     }
     return self;
 }

@@ -71,9 +71,9 @@
 			children = (
 				73CD2ACF1EE5EFBE000636E1 /* AppDelegate.h */,
 				73CD2AD01EE5EFBE000636E1 /* AppDelegate.m */,
-				73CD2AE91EE5F4C7000636E1 /* Question.h */,
 				73CD2AEF1EE60540000636E1 /* Player.h */,
 				73CD2AF01EE60540000636E1 /* Player.m */,
+				73CD2AE91EE5F4C7000636E1 /* Question.h */,
 				73CD2AEA1EE5F4C7000636E1 /* Question.m */,
 				73CD2AEC1EE5F5BD000636E1 /* QuestionManager.h */,
 				73CD2AED1EE5F5BD000636E1 /* QuestionManager.m */,

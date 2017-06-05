@@ -12,7 +12,9 @@
 
 @property (nonatomic) NSString *playerName;
 @property (nonatomic) NSInteger lives;
+@property (nonatomic) NSInteger score;
 
 - (instancetype)initWithPlayerName:(NSString *)name;
+-(void)decrementLife;
 
 @end

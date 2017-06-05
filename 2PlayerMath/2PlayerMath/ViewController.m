@@ -14,9 +14,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *playerAndQuestion;
 @property (weak, nonatomic) IBOutlet UILabel *keypadDisplay;
 
-
-
-
+@property (weak, nonatomic) IBOutlet UILabel *LblResult;
+@property (weak, nonatomic) IBOutlet UILabel *player1Score;
+@property (weak, nonatomic) IBOutlet UILabel *player2Score;
 
 @end
 
@@ -28,6 +28,8 @@
     
     _questionManager = [[QuestionManager alloc] init];
     _playerAndQuestion.text = [_questionManager generateNameAndQuestion];
+    self.player1Score.text = [NSString stringWithFormat:@"%ld", (long)self.questionManager.player1.score];
+    self.player2Score.text = [NSString stringWithFormat:@"%ld", (long)self.questionManager.player2.score];
 
 }
 
@@ -37,49 +39,68 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSString *)buildDisplayText:(NSString *)number{
+    NSString *newDisplayText = [self.keypadDisplay.text stringByAppendingString:number];
+    
+    return newDisplayText;
+}
 
 - (IBAction)oneKey:(id)sender {
-    self.keypadDisplay.text = @"1";
+    self.keypadDisplay.text = [self buildDisplayText:@"1"];
 }
 
 - (IBAction)twoKey:(id)sender {
-    self.keypadDisplay.text = @"2";
+    self.keypadDisplay.text = [self buildDisplayText:@"2"];
 }
 
 - (IBAction)threeKey:(id)sender {
-    self.keypadDisplay.text = @"3";
+    self.keypadDisplay.text = [self buildDisplayText:@"3"];
 }
 
 - (IBAction)fourKey:(id)sender {
-    self.keypadDisplay.text = @"4";
+    self.keypadDisplay.text = [self buildDisplayText:@"4"];
 }
 
 - (IBAction)fiveKey:(id)sender {
-    self.keypadDisplay.text = @"5";
+    self.keypadDisplay.text = [self buildDisplayText:@"5"];
 }
 
 - (IBAction)sixKey:(id)sender {
-    self.keypadDisplay.text = @"6";
+    self.keypadDisplay.text = [self buildDisplayText:@"6"];
 }
 
 - (IBAction)sevenKey:(id)sender {
-    self.keypadDisplay.text = @"7";
+    self.keypadDisplay.text = [self buildDisplayText:@"7"];
 }
 - (IBAction)eightKey:(id)sender {
-    self.keypadDisplay.text = @"8";
+    self.keypadDisplay.text = [self buildDisplayText:@"8"];
 }
 
 - (IBAction)nineKey:(id)sender {
-    self.keypadDisplay.text = @"9";
+    self.keypadDisplay.text = [self buildDisplayText:@"9"];
 }
 
 - (IBAction)zeroKey:(id)sender {
-    self.keypadDisplay.text = @"0";
+    self.keypadDisplay.text = [self buildDisplayText:@"0"];
+}
+- (IBAction)backButton:(id)sender {
+    self.keypadDisplay.text = @"";
 }
 
 - (IBAction)enterKey:(id)sender {
-    NSInteger answer = [self.keypadDisplay.text integerValue];
     
+    self.LblResult.text = @"";
+    
+    NSCharacterSet *characterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString *trimmed = [self.keypadDisplay.text stringByTrimmingCharactersInSet:characterSet];
+    NSInteger answer = [trimmed integerValue];
+    NSString *checkAnswerResponse = [self.questionManager checkAnswer:answer];
+    
+    self.LblResult.text = checkAnswerResponse;
+    self.playerAndQuestion.text = [self.questionManager generateNameAndQuestion];
+    self.keypadDisplay.text = @"";
+    self.player1Score.text = [NSString stringWithFormat:@"%ld", (long)self.questionManager.player1.score];
+    self.player2Score.text = [NSString stringWithFormat:@"%ld", (long)self.questionManager.player2.score];
 }
 
 

@@ -28,12 +28,32 @@
 }
 
 -(NSString *)checkAnswer:(NSInteger)answer{
+   
+    NSLog(@"user answer: %ld", (long)answer);
+    NSLog(@"question answer: %ld", (long)self.question.answer);
     
     if(answer == self.question.answer){
-        return @"Correct!";
+        if([_currentPlayer.playerName isEqualToString:self.player1.playerName]){
+            [self.player1 score];
+            self.currentPlayer = self.player2;
+            return @"Correct!";
+        } else {
+            [self.player2 score];
+            self.currentPlayer = self.player1;
+            return @"Correct!";
+        }
+        
     } else {
-        self.currentPlayer.lives -= 1;
-        return @"Wrong!";
+        if([_currentPlayer.playerName isEqualToString:self.player1.playerName]){
+            [self.player1 decrementLife];
+            self.currentPlayer = self.player2;
+            return @"Wrong";
+        } else {
+             [self.player2 decrementLife];
+            self.currentPlayer = self.player1;
+            return @"Wrong";
+        }
+       
     }
     
 }
@@ -41,6 +61,11 @@
 -(NSString *)generateNameAndQuestion{
     
     [self.question generateNumbers];
+    
+    _leftQ = self.question.leftValue;
+    _rightQ = self.question.rightValue;
+    
+    
     
     NSString *leftValue = [NSString stringWithFormat:@"%li", (long)self.leftQ];
     NSString *rightValue = [NSString stringWithFormat:@"%li", (long)self.rightQ];
@@ -61,7 +86,7 @@
         
     } else if ([self.currentPlayer.playerName isEqualToString:self.player2.playerName]){
         
-        p2temp = [self.player2.playerName stringByAppendingString:@":"];
+        p2temp = [self.player2.playerName stringByAppendingString:@": "];
         self.playerAndQuestion = [p2temp stringByAppendingString:question];
         return self.playerAndQuestion;
     }
