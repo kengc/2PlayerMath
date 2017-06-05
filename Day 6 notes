@@ -1,0 +1,100 @@
+Day 6 notes
+
+App development
+
+
+MVC
+---
+Model-view-controller
+
+want to change how something looks then don't break previously written parts of code.
+just change the gui
+
+Model
+-----
+
+All the data logic and information. meat of the app
+knows nothing about he UI or how it looks. just has the data
+
+
+views
+-----
+almost everything we interacct with is a view <UIivew>
+labels, buttons text fields etc
+
+apple HIG
+
+UIKIT = Uielements without having to build them ourselves. we just subclass them
+
+view heirarchy - every screen in the is called a view controller
+
+View controller (screen) - label button. 
+eery view controller has a root view and all the elements sit on that 
+
+Root view - image view or view 
+
+controller
+----------
+
+iOS is called view controller (screen in the app) links data and app with the views
+
+
+have views and viewcontroller...ohow do they talk?
+
+drag imageview into the view controller (outlets) creates property
+
+Drag elements into view cotroller
+---------------------------------
+ACtion or outlet 
+action = method
+outlet = properties
+
+
+DEFAULT nonatomic!!!!
+with models you wan the property to be strong
+(nonatmic, strong)
+
+Singer        = model
+record label. = model
+
+add the above .h into the view controller (controller)
+view controller was doing the randomness...so move this to the model (record label)
+logic into model class
+
+LESS LOGIC In VIew controLLER
+
+
+View and controller Delegate from controller to View
+Controller uses outlet to view
+View uses action to controller
+Delegate delegate delegate
+
+key value observing is being phased out,apparantly
+KVO audio visual - media player uses KVO 
+
+application lifecycle
+---------------------
+below executed first when app is lauched / put into background / and closed
+
+appdelegate .h
+appdelegate .m - didfinishlaunching check user is logged show thisscreen else show this screen (upon app launch)
+and main.m 
+
+when about to go to background save data
+
+
+
+arc4random_uniform(singers.count);
+
+
+
+
+@property (nonatomic) NSInteger leftValue;
+@property (nonatomic) NSInteger rightValue;
+
+@property (nonatomic) long randomOne;
+@property (nonatomic) long randomTwo;
+
+
+        _leftValue = _randomOne = arc4random_uniform(90) + 10;
+        _rightValue = _randomOne = arc4random_uniform(90) + 10;
