@@ -34,11 +34,11 @@
     
     if(answer == self.question.answer){
         if([_currentPlayer.playerName isEqualToString:self.player1.playerName]){
-            [self.player1 score];
+            [self.player1 incrementScore];
             self.currentPlayer = self.player2;
             return @"Correct!";
         } else {
-            [self.player2 score];
+            [self.player2 incrementScore];
             self.currentPlayer = self.player1;
             return @"Correct!";
         }
@@ -62,9 +62,8 @@
     
     [self.question generateNumbers];
     
-    _leftQ = self.question.leftValue;
-    _rightQ = self.question.rightValue;
-    
+    self.leftQ = self.question.leftValue;
+    self.rightQ = self.question.rightValue;
     
     
     NSString *leftValue = [NSString stringWithFormat:@"%li", (long)self.leftQ];
@@ -74,10 +73,9 @@
     NSString *question = [lv stringByAppendingString:rightValue];
     
     NSString *p1temp;
-    //NSString *player1Question;
 
     NSString *p2temp;
-    //NSString *player2Question;
+   
     
     if([self.currentPlayer.playerName isEqualToString:self.player1.playerName]){
         p1temp = [self.player1.playerName stringByAppendingString:@": "];

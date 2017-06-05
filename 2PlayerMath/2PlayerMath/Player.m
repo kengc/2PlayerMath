@@ -17,15 +17,22 @@
         _playerName = name;
         _lives = 3;
         _score = 0;
+        
+        NSString *pl = [NSString stringWithFormat:@": %ld", (long)_lives];
+        _playerLives = [_playerName stringByAppendingString:pl];
     }
     return self;
 }
 
 -(void)decrementLife{
     self.lives -= 1;
+    NSString *pl = [NSString stringWithFormat:@": %ld", (long)_lives];
+    self.playerLives = [self.playerName stringByAppendingString:pl];
 }
 -(void)incrementScore{
     self.score += 1;
+    self.playerScore = [NSString stringWithFormat:@"%ld", (long)self.score];
+    
 }
     
 

@@ -28,8 +28,8 @@
     
     _questionManager = [[QuestionManager alloc] init];
     _playerAndQuestion.text = [_questionManager generateNameAndQuestion];
-    self.player1Score.text = [NSString stringWithFormat:@"%ld", (long)self.questionManager.player1.score];
-    self.player2Score.text = [NSString stringWithFormat:@"%ld", (long)self.questionManager.player2.score];
+    self.player1Score.text = self.questionManager.player1.playerLives;
+    self.player2Score.text = self.questionManager.player2.playerLives;
 
 }
 
@@ -99,8 +99,8 @@
     self.LblResult.text = checkAnswerResponse;
     self.playerAndQuestion.text = [self.questionManager generateNameAndQuestion];
     self.keypadDisplay.text = @"";
-    self.player1Score.text = [NSString stringWithFormat:@"%ld", (long)self.questionManager.player1.score];
-    self.player2Score.text = [NSString stringWithFormat:@"%ld", (long)self.questionManager.player2.score];
+    self.player1Score.text = self.questionManager.player1.playerLives;
+    self.player2Score.text = self.questionManager.player2.playerLives;
 }
 
 
