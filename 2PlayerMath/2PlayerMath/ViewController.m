@@ -99,6 +99,13 @@
     self.LblResult.text = checkAnswerResponse;
     self.playerAndQuestion.text = [self.questionManager generateNameAndQuestion];
     self.keypadDisplay.text = @"";
+
+    if([self.questionManager hasPlayerLost]){
+        self.LblResult.text = self.questionManager.winMessage;
+//        [self.questionManager.player1 resetPlayerLives];
+//        [self.questionManager.player2 resetPlayerLives];
+    }
+    
     self.player1Score.text = self.questionManager.player1.playerLives;
     self.player2Score.text = self.questionManager.player2.playerLives;
 }

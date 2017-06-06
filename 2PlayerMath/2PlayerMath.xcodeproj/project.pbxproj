@@ -71,12 +71,7 @@
 			children = (
 				73CD2ACF1EE5EFBE000636E1 /* AppDelegate.h */,
 				73CD2AD01EE5EFBE000636E1 /* AppDelegate.m */,
-				73CD2AEF1EE60540000636E1 /* Player.h */,
-				73CD2AF01EE60540000636E1 /* Player.m */,
-				73CD2AE91EE5F4C7000636E1 /* Question.h */,
-				73CD2AEA1EE5F4C7000636E1 /* Question.m */,
-				73CD2AEC1EE5F5BD000636E1 /* QuestionManager.h */,
-				73CD2AED1EE5F5BD000636E1 /* QuestionManager.m */,
+				73CD2AF21EE6279A000636E1 /* Model */,
 				73CD2AD21EE5EFBE000636E1 /* ViewController.h */,
 				73CD2AD31EE5EFBE000636E1 /* ViewController.m */,
 				73CD2AD51EE5EFBE000636E1 /* Main.storyboard */,
@@ -95,6 +90,19 @@
 				73CD2ACD1EE5EFBE000636E1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		73CD2AF21EE6279A000636E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				73CD2AE91EE5F4C7000636E1 /* Question.h */,
+				73CD2AEA1EE5F4C7000636E1 /* Question.m */,
+				73CD2AEC1EE5F5BD000636E1 /* QuestionManager.h */,
+				73CD2AED1EE5F5BD000636E1 /* QuestionManager.m */,
+				73CD2AEF1EE60540000636E1 /* Player.h */,
+				73CD2AF01EE60540000636E1 /* Player.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

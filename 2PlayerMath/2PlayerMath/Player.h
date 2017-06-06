@@ -19,5 +19,6 @@
 - (instancetype)initWithPlayerName:(NSString *)name;
 -(void)decrementLife;
 -(void)incrementScore;
+-(void)resetPlayerLives;
 
 @end

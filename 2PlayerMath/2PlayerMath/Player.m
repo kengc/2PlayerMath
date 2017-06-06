@@ -32,8 +32,12 @@
 -(void)incrementScore{
     self.score += 1;
     self.playerScore = [NSString stringWithFormat:@"%ld", (long)self.score];
-    
 }
-    
+
+-(void)resetPlayerLives{
+    self.lives = 3;
+    NSString *pl = [NSString stringWithFormat:@": %ld", (long)_lives];
+    self.playerLives = [self.playerName stringByAppendingString:pl];
+}
 
 @end

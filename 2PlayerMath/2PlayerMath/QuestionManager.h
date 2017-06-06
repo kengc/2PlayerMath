@@ -17,15 +17,18 @@
 @property (nonatomic) Player *player2;
 @property (nonatomic) Player *currentPlayer;
 
+//break out player into its own manager
+//questions only here. communicate via delegates
+
 @property (nonatomic) NSString *playerAndQuestion;
-//@property (nonatomic) NSInteger rightQ;
+@property (nonatomic) NSString *winMessage;
 
 @property (nonatomic) NSInteger leftQ;
 @property (nonatomic) NSInteger rightQ;
 
 //@property (nonatomic) NSString *currentPlayer;
 
-
+-(BOOL)hasPlayerLost;
 -(NSString *)generateNameAndQuestion;
 -(NSString *)checkAnswer:(NSInteger)answer;
 @end

@@ -45,17 +45,33 @@
         
     } else {
         if([_currentPlayer.playerName isEqualToString:self.player1.playerName]){
-            [self.player1 decrementLife];
+            [self.currentPlayer decrementLife];
             self.currentPlayer = self.player2;
             return @"Wrong";
         } else {
-             [self.player2 decrementLife];
+            [self.currentPlayer decrementLife];
             self.currentPlayer = self.player1;
             return @"Wrong";
         }
        
     }
     
+}
+
+-(BOOL)hasPlayerLost{
+    
+    if(self.player1.lives == 0){
+        [self.player1 resetPlayerLives];
+        [self.player2 resetPlayerLives];
+        self.winMessage = [self.player1.playerName stringByAppendingString:@" LOST!"];
+        return YES;
+    }else if (self.player2.lives == 0){
+        [self.player1 resetPlayerLives];
+        [self.player2 resetPlayerLives];
+        self.winMessage = [self.player2.playerName stringByAppendingString:@" LOST!"];
+        return YES;
+    }
+    return NO;
 }
 
 -(NSString *)generateNameAndQuestion{
